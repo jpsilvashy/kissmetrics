@@ -19,6 +19,7 @@ func NewClient(ApiKey string) *Client {
 	return &Client{ApiKey}
 }
 
+// TODO:RecordEvent(e Event) (resp type?, err Error)
 func (c *Client) RecordEvent(p, n string) (resp *http.Response, err error) {
 	base := "http://trk.kissmetrics.com/e"
 	v := url.Values{}
