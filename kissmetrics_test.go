@@ -1,13 +1,28 @@
 package kissmetrics
 
 import (
-    "testing"
+	"bytes"
+	"fmt"
+	"testing"
 )
 
-func TestExample(t *testing.T) {
-    c := Client{"example project", "example apikey"}
-    sum := c.example(1, 2, 3)
-    if sum != 6 {
-        t.Error("expected 6 but got: ", sum)
-    }
+var c *Client
+
+func init() {
+	c = &Client{"apikey"}
+}
+
+func TestReq(t *testing.T) {
+	resp, err := c.RecordEvent("jpsilvashy@gmail.com", "test")
+	if err != nil {
+		t.Error("unexpected error: ", err)
+	}
+
+	if resp.StatusCode != 200 {
+		t.Error("unexpected error: wanted status code 200, got", err)
+	}
+	buf := new(bytes.Buffer)
+	buf.ReadFrom(resp.Body)
+	s := buf.String() // Does a complete
+	fmt.Println(s)
 }
