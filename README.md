@@ -13,4 +13,4 @@ that your changes do not decrease test coverage.
 
 ## License
 
-This is Free Software, released under the terms of the [GPL v3][].
+This is Free Software, released under the terms of the [GPL v3](http://www.gnu.org/licenses/gpl.html).
