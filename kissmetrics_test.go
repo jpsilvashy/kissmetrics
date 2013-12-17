@@ -31,5 +31,5 @@ func TestReq(t *testing.T) {
 	buf := new(bytes.Buffer)
 	buf.ReadFrom(resp.Body)
 	s := buf.String() // Does a complete
-	fmt.Println(s) // not good
+	fmt.Println(s)    // not good
 }
